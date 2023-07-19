@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkyv8r1wr54s5"]
+
+[ext_resource type="Script" path="res://gradient_label.gd" id="1_8oit0"]
+[ext_resource type="Shader" path="res://gradient_label.gdshader" id="1_yeuao"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_45103"]
+shader = ExtResource("1_yeuao")
+shader_parameter/rect_size = Vector2(473, 161)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3ypjy"]
+shader = ExtResource("1_yeuao")
+shader_parameter/rect_size = Vector2(1041, 161)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GradientLabel" type="Label" parent="VBoxContainer"]
+material = SubResource("ShaderMaterial_45103")
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 116
+text = "gradient"
+script = ExtResource("1_8oit0")
+
+[node name="GradientLabel2" type="Label" parent="VBoxContainer"]
+material = SubResource("ShaderMaterial_3ypjy")
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 116
+text = "gradient but wider"
+script = ExtResource("1_8oit0")
